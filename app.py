@@ -78,8 +78,8 @@ def delete_pet(pet_id):
 @app.route('/pets/reset', methods=['POST'])
 def reset_pets():
     """Clears the pets list and resets the ID counter."""
-    global pets, next_id
-    pets = {}
+    global next_id
+    pets.clear()
     next_id = 1
     response = make_response('', 204)
     return response
